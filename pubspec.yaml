@@ -42,11 +42,21 @@ dev_dependencies:
     sdk: flutter
   flutter_lints: ^1.0.0
   flutter_launcher_icons: ^0.9.2
+  flutter_native_splash: ^2.1.1
 
 flutter_icons:
   android: true
   ios: true
-  image_path: "assets/Anotaçãoes.png"
+  image_path: "assets/laucher.png"
+  adptive_icon_background: "#ffffff"
+  adptive_icon_foreground: "assets/laucher.png"
+
+flutter_native_splash:
+  color: "#0A0A0A"
+  image: "assets/laucher.png"
+  android: true
+  ios: true
+
 
 
 flutter:
@@ -56,6 +66,7 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
      - assets/animation.json
+     - assets/laucher.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
