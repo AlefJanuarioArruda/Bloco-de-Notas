@@ -104,11 +104,11 @@ class _NotesList extends StatelessWidget {
                 IconButton(
                   icon: const Icon(Icons.edit,color: Colors.blue,),
                   onPressed: () {
+
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                          // a nota existente eh enviada como parametro para a
-                          // tela de edicao preencher os campos automaticamente
+
                           builder: (context) => NoteEditPage(note: note)),
                     );
                   },
