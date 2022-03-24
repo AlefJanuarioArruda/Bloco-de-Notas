@@ -33,6 +33,7 @@ class NotesLoaded extends NotesState {
   }) {
     return NotesLoaded(
       notes: notes ?? this.notes,
+
     );
   }
 

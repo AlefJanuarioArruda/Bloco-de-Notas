@@ -2,6 +2,7 @@ import 'package:bloc/bloc.dart';
 import 'package:blocsqlitecrud/db/database_provider.dart';
 import 'package:blocsqlitecrud/models/note.dart';
 import 'package:equatable/equatable.dart';
+import 'package:flutter/material.dart';
 
 part 'notes_state.dart';
 

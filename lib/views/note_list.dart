@@ -1,23 +1,11 @@
 import 'package:blocsqlitecrud/cubits/notes_cubit.dart';
 import 'package:blocsqlitecrud/models/note.dart';
+import 'package:blocsqlitecrud/utils/note_list_Bar.dart';
 import 'package:blocsqlitecrud/views/note_edit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class NoteListPage extends StatelessWidget {
-  const NoteListPage({Key? key}) : super(key: key);
 
-  // o NotesCubit que foi criado e providenciado para o MaterialApp eh recuperado
-  // via construtor .value e executa a funcao de buscar as notas,
-  // ou seja, novas instancias nao usam o .value, instancias existentes sim
-  @override
-  Widget build(BuildContext context) {
-    return BlocProvider.value(
-      value: BlocProvider.of<NotesCubit>(context)..buscarNotas(),
-      child: const DocumentosView(),
-    );
-  }
-}
 
 class DocumentosView extends StatelessWidget {
   const DocumentosView({Key? key}) : super(key: key);
@@ -25,44 +13,23 @@ class DocumentosView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Bloc SQLite Crud - Lista de Notas'),
-        actions: <Widget>[
-          IconButton(
-            icon: const Icon(Icons.clear_all),
-            onPressed: () {
-              // excluir todas as notas
-              showDialog<String>(
-                context: context,
-                builder: (BuildContext context) => AlertDialog(
-                  title: const Text('Excluir Todas as Notas'),
-                  content: const Text('Confirmar operação?'),
-                  actions: <Widget>[
-                    TextButton(
-                      onPressed: () => Navigator.pop(context),
-                      child: const Text('Cancelar'),
-                    ),
-                    TextButton(
-                      onPressed: () {
-                        context.read<NotesCubit>().excluirNotas();
-                        Navigator.pop(context);
-                        ScaffoldMessenger.of(context)
-                          ..hideCurrentSnackBar()
-                          ..showSnackBar(const SnackBar(
-                            content: Text('Notas excluídas com sucesso'),
-                          ));
-                      },
-                      child: const Text('OK'),
-                    ),
-                  ],
-                ),
-              );
-            },
-          ),
-        ],
+      backgroundColor: Colors.indigo[50],
+      appBar: MainAppBar(
+        title:
+        const Text(
+          'Bloco de Notas',
+          style:
+          TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.w800,
+              color: Colors.white
+          ),), key: null,
+
+
       ),
       body: const _Content(),
       floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.black,
         child: const Icon(Icons.add),
         onPressed: () {
           // como o FAB cria uma nota nova, a nota nao eh parametro recebido
@@ -97,7 +64,7 @@ class _Content extends StatelessWidget {
       //a mensagem abaixo aparece se a lista de notas estiver vazia
       if (state.notes!.isEmpty) {
         return const Center(
-          child: Text('Não há notas. Clique no botão abaixo para cadastrar.'),
+          child: Text('Não há notas. Clique no botão abaixo para cadastrar.',style: TextStyle(fontWeight: FontWeight.w800),),
         );
       } else {
         return _NotesList(state.notes);
@@ -125,13 +92,17 @@ class _NotesList extends StatelessWidget {
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(10.0),
               ),
-              title: Text(note.title),
+              title: Padding(
+                padding: const EdgeInsets.only(top: 5,bottom: 15),
+                child: Text(note.title,style: TextStyle(fontSize: 20,fontWeight: FontWeight.w800),),
+              ),
+
               subtitle: Text(
                 note.content,
               ),
               trailing: Wrap(children: <Widget>[
                 IconButton(
-                  icon: const Icon(Icons.edit),
+                  icon: const Icon(Icons.edit,color: Colors.blue,),
                   onPressed: () {
                     Navigator.push(
                       context,
@@ -143,7 +114,7 @@ class _NotesList extends StatelessWidget {
                   },
                 ),
                 IconButton(
-                    icon: const Icon(Icons.delete),
+                    icon: const Icon(Icons.delete,color: Colors.red,),
                     onPressed: () {
                       // excluir nota atraves do id
                       showDialog<String>(
@@ -154,7 +125,7 @@ class _NotesList extends StatelessWidget {
                           actions: <Widget>[
                             TextButton(
                               onPressed: () => Navigator.pop(context),
-                              child: const Text('Cancelar'),
+                              child: const Text('Cancelar',style: TextStyle(color: Colors.red),),
                             ),
                             TextButton(
                               onPressed: () {
@@ -166,7 +137,7 @@ class _NotesList extends StatelessWidget {
                                     content: Text('Nota excluída com sucesso'),
                                   ));
                               },
-                              child: const Text('OK'),
+                              child: const Text('OK',style: TextStyle(color: Colors.blue),),
                             ),
                           ],
                         ),

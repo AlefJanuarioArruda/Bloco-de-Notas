@@ -3,10 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'db/database_provider.dart';
+import 'utils/note_list_Bar.dart';
 import 'views/note_list.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp(), );
 }
 
 class MyApp extends StatelessWidget {
@@ -24,8 +25,8 @@ class MyApp extends StatelessWidget {
             NotesCubit(databaseProvider: DatabaseProvider.instance),
         child: MaterialApp(
           debugShowCheckedModeBanner: false,
-          title: 'Flutter Demo',
           theme: ThemeData(
+
             primarySwatch: Colors.blueGrey,
           ),
           home: const NoteListPage(),
@@ -34,3 +35,4 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
