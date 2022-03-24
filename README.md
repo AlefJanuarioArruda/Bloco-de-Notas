@@ -1,7 +1,5 @@
-# blocsqlitecrud
 
-Aplicativo de notas (CRUD) utilizando o pacote Bloc.
-
-## Vídeo explicativo no canal AnthonyDev no Youtube:
-
-https://www.youtube.com/watch?v=oCorKfzgw3I
+Data 24/03/2022
+Aplicativo de notas 
+Desenvolvido Alef Januario Arruda.
+Status - Completo 
