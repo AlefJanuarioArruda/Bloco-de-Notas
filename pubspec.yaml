@@ -36,6 +36,8 @@ dependencies:
   rename: ^2.0.1
   lottie: ^1.2.2
   cupertino_icons: ^1.0.2
+  google_fonts: ^2.0.0
+  google_mobile_ads: ^0.13.0
 
 dev_dependencies:
   flutter_test:

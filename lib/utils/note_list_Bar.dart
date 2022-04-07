@@ -48,14 +48,14 @@ class MainAppBar extends StatelessWidget implements PreferredSizeWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     Padding(
-                      padding: const EdgeInsets.only(left: 50),
+                      padding: const EdgeInsets.only(left: 60),
                       child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                       title,
                         SizedBox(width: W/10,),
                         IconButton(
-                          icon: const Icon(Icons.clear_all,size: 35,color: Colors.white,),
+                          icon: const Icon(Icons.close,size: 30,color: Colors.white,),
                           onPressed: () {
                             // excluir todas as notas
                             showDialog<String>(

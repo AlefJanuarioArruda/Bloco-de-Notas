@@ -17,7 +17,7 @@ class DocumentosView extends StatelessWidget {
       appBar: MainAppBar(
         title:
         const Text(
-          'Bloco de Notas',
+          'Frutify Annotation',
           style:
           TextStyle(
               fontSize: 20,
@@ -64,7 +64,7 @@ class _Content extends StatelessWidget {
       //a mensagem abaixo aparece se a lista de notas estiver vazia
       if (state.notes!.isEmpty) {
         return const Center(
-          child: Text('Não há notas. Clique no botão abaixo para cadastrar.',style: TextStyle(fontWeight: FontWeight.w800),),
+          child: Text('Não há notas. Clique no botão abaixo para Adicionar.',style: TextStyle(fontWeight: FontWeight.w800),),
         );
       } else {
         return _NotesList(state.notes);
