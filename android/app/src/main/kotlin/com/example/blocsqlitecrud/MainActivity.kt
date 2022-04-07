@@ -1,4 +1,4 @@
-package com.bloco.de.notas
+package com.Frutify.Annotation
 
 import io.flutter.embedding.android.FlutterActivity
 

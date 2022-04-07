@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.bloco.de.notas">
+    package="com.Frutify.Annotation">
    <application
-        android:label="Bloco de Anotação"
+        android:label="Frutify Annotation"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

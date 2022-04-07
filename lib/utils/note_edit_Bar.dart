@@ -14,7 +14,8 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
             ),
           ) ,
           backgroundColor: Colors.black,
-          title: const Text('Bloco de Notas',style: TextStyle(color: Colors.white),),
+          title: const Text('Frutify Annotation',style: TextStyle(color: Colors.white,fontSize: 20,
+            fontWeight: FontWeight.w800,),),
 
       shape: CustomShapeBorder(),
     );
